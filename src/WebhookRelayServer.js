@@ -90,7 +90,7 @@ class WebhookRelayServer {
 
                 var id = null;
 
-                if (isConfig && wc.id && window.id.trim() !== '') {
+                if (isConfig && wc.id && wc.id.trim() !== '') {
                     if (wc.id.includes('/')) {
                         rej('Invalid ID.');
                         return;

@@ -19,13 +19,13 @@
     hooksPath: '/hooks',            //Path to post Webhooks
     hooksSubscriptionPath: '/subscribe/hooks', //Path to subscribe to Hooks
     bundleSubscriptionPath: '/subscribe/bundle', //Path to subscribe to Bundles
-    maxSubscriptions: 10            //Default Max Number of Subscriptions for Hooks/Bundles
+    maxSubscriptions: 10,           //Default Max Number of Subscriptions for Hooks/Bundles
     webhookPort: 80,                //Port to Listen for Webhooks
     subscriptionPort: 80,           //Port to Listen for Subscriptions
     useHttps: true,                 //Enable HTTPS
     credentials: {                  //Required for HTTPS
         key: 'secure key',          //Key for HTTPS
-        keyFile: 'credentials.key'  //Alternatively can load from file
+        keyFile: 'credentials.key', //Alternatively can load from file
         cert: 'certificate',        //Certificate for HTTPS
         certFile: 'cerdentials.cert'//Alternatively can load from file
     },
