@@ -50,7 +50,7 @@ const ERROR_CODES = {
 
 
 class WebhookRelayServer {
-    constructor(config) {
+    constructor(config = {}) {
         var hooks = {};
         var bundles = {};
 
@@ -90,7 +90,7 @@ class WebhookRelayServer {
 
                 var id = null;
 
-                if (isConfig && wc.id !== null) {
+                if (isConfig && wc.id && window.id.trim() !== '') {
                     if (wc.id.includes('/')) {
                         rej('Invalid ID.');
                         return;
