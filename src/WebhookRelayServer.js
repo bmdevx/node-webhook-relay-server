@@ -313,7 +313,7 @@ class WebhookRelayServer {
                 hook.verifyWebhookRequest(req)
                     .then(result => {
                         if (result.verified) {
-                            res.send(200);
+                            res.sendStatus(200);
 
                             hook.processDataFromRequest(req, hook)
                                 .then(data => {
@@ -331,16 +331,16 @@ class WebhookRelayServer {
                                 });
                         } else {
                             if (debug) console.warn(`Webhook (${hook.Id}) - Authorization Failed`);
-                            res.send(401);
+                            res.sendStatus(401);
                         }
                     })
                     .catch(e => {
                         console.error(e);
-                        res.send(500);
+                        res.sendStatus(500);
                     });
             } else {
                 if (debug) console.warn(`Webhook (${hook.Id}) - Not Found`);
-                res.send(400);
+                res.sendStatus(400);
             }
         });
 
@@ -405,7 +405,7 @@ class WebhookRelayServer {
         this.app.ws(`${PATH_BUNDLE_SUBSCRIPTION}/:id*`, (ws, req) => proccessSubscription(ws, req, bundles));
 
         this.app.all('*', (req, res) => {
-            res.send(400);
+            res.sendStatus(400);
         });
 
 

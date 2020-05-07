@@ -7,7 +7,7 @@ class BasicProcessor extends require('./BaseProcessor') {
 
     process(req, webhook) {
         return new Promise((res, rej) => {
-            var params = req.path.split('/').splice(this._hookBaseLevels, this._hookBaseLevels);
+            var params = decodeURI(req.path).split('/').splice(this._hookBaseLevels, this._hookBaseLevels);
 
             var data = {};
 
