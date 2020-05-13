@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "description": "Relay webhooks to a websock subscription.",
   "author": "bmdevx",
-  "license": "GPL-3.0",
+  "license": "GNU GPL3",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",

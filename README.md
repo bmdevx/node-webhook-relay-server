@@ -1,6 +1,6 @@
 # Webhook Relay Server (node-webhook-relay-server)
 
-![David](https://img.shields.io/david/bmdevx/node-webhook-relay-server?style=flat-square)  ![npm](https://img.shields.io/npm/dt/node-webhook-relay-server?style=flat-square) ![npm](https://img.shields.io/npm/v/node-webhook-relay-server?style=flat-square) ![GitHub](https://img.shields.io/github/license/bmdevx/node-webhook-relay-server?style=flat-square)
+![David](https://img.shields.io/david/bmdevx/node-webhook-relay-server?style=flat-square)  [![npm](https://img.shields.io/npm/dt/node-webhook-relay-server?style=flat-square)](https://www.npmjs.com/package/node-webhook-relay-server) [![npm](https://img.shields.io/npm/v/node-webhook-relay-server?style=flat-square)](https://www.npmjs.com/package/node-webhook-relay-server) [![GitHub](https://img.shields.io/github/license/bmdevx/node-webhook-relay-server?style=flat-square)](https://github.com/bmdevx/node-webhook-relay-server/blob/master/LICENSE)
 
 ## Webhook Relay Server is a sever in which webhooks can be redirected to websockets for monitoring. The server's goal was to be able to expose web services without exposing LAN networks in a secure fashion
 
@@ -40,7 +40,7 @@
 
 ``` js
 addWebhook({                        // Config and all fields are optional
-    endpoint: '/location/:data/:id',   //Custom path for webhook. Fields that start with a colon can be parsed using the BasicProcessor as 'restData' in the subscription response.
+    endpoint: '/location/:data/:id',   //Custom path for webhook. Fields that start with a colon can be parsed using the BasicProcessor as 'rest_data' in the subscription response.
     id: 'my-hook',                      //ID of webhook. UUID is created when blank
     hookProcessor: processor,           //Processor that handles webhook request. Default is BasicProcessor.
     hookAuthentication: atuhentication, //Webhook Authenticator. Default is NoAuthentication
@@ -81,11 +81,11 @@ listen();                               //Starts Server
 ### Processors
 
 ```js
-Processors.Basic();                     //Default Processor which can turn endpoints with colons into restData. POST data is automatically returned as 'body'.
+Processors.Basic();                     //Default Processor which can turn endpoints with colons into rest_data. POST data is automatically returned as 'body'.
 returns Promise(JSON.stringify({
     source: req.ip,
     body: req.body,
-    restData: {} //processed endpoint data
+    rest_data: {} //processed endpoint data
 }));
 
 

@@ -20,7 +20,7 @@ class BasicProcessor extends require('./BaseProcessor') {
             res(JSON.stringify({
                 source: req.ip,
                 body: req.body,
-                restData: data
+                rest_data: data
             }));
         });
     }
